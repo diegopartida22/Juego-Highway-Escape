@@ -525,7 +525,6 @@ MonoBehaviour:
   playBtn: {fileID: 20562695}
   restartBtn: {fileID: 478281500}
   menuButtons: {fileID: 497489784}
-  dailyRewardBtn: {fileID: 0}
   swipeLR: {fileID: 89834566}
   swipeUp: {fileID: 852570260}
   velocityBoard: {fileID: 1268399564}
@@ -3515,7 +3514,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CRASHY RACING
+  m_Text: HIGHWAY SCAPE
 --- !u!222 &1805835730
 CanvasRenderer:
   m_ObjectHideFlags: 0

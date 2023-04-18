@@ -24,7 +24,6 @@ public class UIManager : MonoBehaviour
     public GameObject playBtn;
     public GameObject restartBtn;
     public GameObject menuButtons;
-    public GameObject dailyRewardBtn;
     public GameObject swipeLR;
     public GameObject swipeUp;
     public GameObject velocityBoard;
