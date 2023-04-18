@@ -25,11 +25,6 @@ public class UIManager : MonoBehaviour
     public GameObject restartBtn;
     public GameObject menuButtons;
     public GameObject dailyRewardBtn;
-    public GameObject settingsUI;
-    public GameObject soundOnBtn;
-    public GameObject soundOffBtn;
-    public GameObject musicOnBtn;
-    public GameObject musicOffBtn;
     public GameObject swipeLR;
     public GameObject swipeUp;
     public GameObject velocityBoard;
@@ -80,12 +75,6 @@ public class UIManager : MonoBehaviour
         score.text = ScoreManager.Instance.Score.ToString();
         bestScore.text = ScoreManager.Instance.HighScore.ToString();
         coinText.text = CoinManager.Instance.Coins.ToString();
-
-        if (settingsUI.activeSelf)
-        {
-            UpdateSoundButtons();
-            UpdateMusicButtons();
-        }
     }
 
     void GameManager_GameStateChanged(GameState newState, GameState oldState)
@@ -112,7 +101,6 @@ public class UIManager : MonoBehaviour
     void Reset()
     {
         mainCanvas.SetActive(true);
-        characterSelectionUI.SetActive(false);
         header.SetActive(false);
         title.SetActive(false);
         score.gameObject.SetActive(false);
@@ -152,16 +140,12 @@ public class UIManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("firstTime", 1);
         }
-
-        settingsUI.SetActive(false);      
         header.SetActive(true);
         title.SetActive(true);
         playBtn.SetActive(true);
         restartBtn.SetActive(false);
         menuButtons.SetActive(true);
         velocityBoard.SetActive(false);
-
-
     }
 
     public void ShowGameUI()
@@ -184,7 +168,6 @@ public class UIManager : MonoBehaviour
         playBtn.SetActive(false);
         restartBtn.SetActive(true);
         menuButtons.SetActive(true);
-        settingsUI.SetActive(false);
         velocityText.text = ((int)maxSpeed).ToString();
         velocityNote.SetActive(true);
     }
@@ -195,59 +178,5 @@ public class UIManager : MonoBehaviour
         swipeUp.SetActive(true);
     }
 
-
-
-    public void ShowSettingsUI()
-    {
-        settingsUI.SetActive(true);
-    }
-
-    public void HideSettingsUI()
-    {
-        settingsUI.SetActive(false);
-    }
-
-
-    public void ShowCharacterSelectionScene()
-    {
-        mainCanvas.SetActive(false);
-        characterSelectionUI.SetActive(true);
-    }
-
-    public void CloseCharacterSelectionScene()
-    {
-        mainCanvas.SetActive(true);
-        characterSelectionUI.SetActive(false);
-        SoundManager.Instance.ToggleSound();
-    }
-
-
-    void UpdateSoundButtons()
-    {
-        if (SoundManager.Instance.IsSoundOff())
-        {
-            soundOnBtn.gameObject.SetActive(false);
-            soundOffBtn.gameObject.SetActive(true);
-        }
-        else
-        {
-            soundOnBtn.gameObject.SetActive(true);
-            soundOffBtn.gameObject.SetActive(false);
-        }
-    }
-
-    void UpdateMusicButtons()
-    {
-        if (SoundManager.Instance.IsMusicOff())
-        {
-            musicOffBtn.gameObject.SetActive(true);
-            musicOnBtn.gameObject.SetActive(false);
-        }
-        else
-        {
-            musicOffBtn.gameObject.SetActive(false);
-            musicOnBtn.gameObject.SetActive(true);
-        }
-    }
 
 }
