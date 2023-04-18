@@ -1476,28 +1476,16 @@ MonoBehaviour:
   restartBtn: {fileID: 478281500}
   menuButtons: {fileID: 497489784}
   dailyRewardBtn: {fileID: 0}
-  dailyRewardBtnText: {fileID: 0}
-  rewardUI: {fileID: 1549654778}
   settingsUI: {fileID: 1500963742}
   soundOnBtn: {fileID: 958384885}
   soundOffBtn: {fileID: 35847325}
   musicOnBtn: {fileID: 336043374}
   musicOffBtn: {fileID: 1739397312}
-  tutorial: {fileID: 1892987428}
   swipeLR: {fileID: 89834566}
   swipeUp: {fileID: 852570260}
   velocityBoard: {fileID: 1268399564}
   velocityText: {fileID: 839018667}
   velocityNote: {fileID: 1156897082}
-  watchRewardedAdBtn: {fileID: 0}
-  leaderboardBtn: {fileID: 0}
-  achievementBtn: {fileID: 170906822}
-  iapPurchaseBtn: {fileID: 0}
-  removeAdsBtn: {fileID: 1916551646}
-  restorePurchaseBtn: {fileID: 1921197964}
-  storeUI: {fileID: 1372011434}
-  shareUI: {fileID: 1468690730}
-  shareUIController: {fileID: 844760270}
 --- !u!4 &218131796
 Transform:
   m_ObjectHideFlags: 0
@@ -2093,7 +2081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -69}
+  m_AnchoredPosition: {x: 142, y: -69}
   m_SizeDelta: {x: 250, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &368489831
@@ -3658,7 +3646,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -6, y: -70}
+  m_AnchoredPosition: {x: -92, y: -70}
   m_SizeDelta: {x: 200, y: 100}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &610080124
@@ -4851,17 +4839,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 839018665}
   m_CullTransparentMesh: 0
---- !u!114 &844760270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114993532177404394, guid: eb75309886f28435eb2eb72850cc845f, type: 3}
-  m_PrefabInstance: {fileID: 306178048}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f193dbd38177c4788a1503750162e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &852570260
 GameObject:
   m_ObjectHideFlags: 0
@@ -7033,7 +7010,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -185}
+  m_AnchoredPosition: {x: 0, y: -248.89987}
   m_SizeDelta: {x: 170, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1268399566
@@ -7147,7 +7124,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -63.89987}
   m_SizeDelta: {x: 0, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!1 &1311121414
@@ -7187,7 +7164,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -91.1001}
+  m_AnchoredPosition: {x: 0, y: -155}
   m_SizeDelta: {x: 0, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1311121416
@@ -7605,8 +7582,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08b9d8d9b2613844a95ecbf72f47bdf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinPackPrefab: {fileID: 173342, guid: e353b78d986484fc1af9fe44ab2fd5e1, type: 3}
-  productList: {fileID: 1318058499}
 --- !u!114 &1372011437
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8333,11 +8308,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &1468690730 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1684210284427676, guid: eb75309886f28435eb2eb72850cc845f, type: 3}
-  m_PrefabInstance: {fileID: 306178048}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1500963742
 GameObject:
   m_ObjectHideFlags: 0
@@ -8987,11 +8957,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203b6f84adfa4304f951d8bd7e3c6e17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animatedGiftBox: {fileID: 209648654}
-  congratsText: {fileID: 445495834}
-  sunburst: {fileID: 1120354879}
-  reward: {fileID: 87400985}
-  rewardText: {fileID: 652611688}
 --- !u!95 &1549654782
 Animator:
   serializedVersion: 5
@@ -9355,7 +9320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -10, y: -33}
+  m_AnchoredPosition: {x: -96, y: -33}
   m_SizeDelta: {x: 35, y: 35}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &1633208224
@@ -10089,8 +10054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52d3ef33ecb5fab4584514767da1c437, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extraCullHeight: 0.2
-  _camera: {fileID: 0}
 --- !u!1 &1775217983
 GameObject:
   m_ObjectHideFlags: 0
@@ -10203,7 +10166,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -29}
+  m_AnchoredPosition: {x: 142, y: -29}
   m_SizeDelta: {x: 160, y: 100}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1781498319
@@ -11471,7 +11434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -27.400146}
+  m_AnchoredPosition: {x: 0, y: -91.30002}
   m_SizeDelta: {x: 300, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126839853
