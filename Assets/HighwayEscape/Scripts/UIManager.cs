@@ -221,10 +221,6 @@ public class UIManager : MonoBehaviour
         SoundManager.Instance.ToggleSound();
     }
 
-    public void ButtonClickSound()
-    {
-        Utilities.ButtonClickSound();
-    }
 
     void UpdateSoundButtons()
     {
