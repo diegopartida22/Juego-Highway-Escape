@@ -25,37 +25,20 @@ public class UIManager : MonoBehaviour
     public GameObject restartBtn;
     public GameObject menuButtons;
     public GameObject dailyRewardBtn;
-    public Text dailyRewardBtnText;
-    public GameObject rewardUI;
     public GameObject settingsUI;
     public GameObject soundOnBtn;
     public GameObject soundOffBtn;
     public GameObject musicOnBtn;
     public GameObject musicOffBtn;
-    public GameObject tutorial;
     public GameObject swipeLR;
     public GameObject swipeUp;
     public GameObject velocityBoard;
     public Text velocityText;
     public GameObject velocityNote;
 
-    [Header("Premium Features Buttons")]
-    public GameObject watchRewardedAdBtn;
-    public GameObject leaderboardBtn;
-    public GameObject achievementBtn;
-    public GameObject iapPurchaseBtn;
-    public GameObject removeAdsBtn;
-    public GameObject restorePurchaseBtn;
 
-    [Header("In-App Purchase Store")]
-    public GameObject storeUI;
-
-    [Header("Sharing-Specific")]
-    public GameObject shareUI;
 
     Animator scoreAnimator;
-    Animator dailyRewardAnimator;
-    bool isWatchAdsForCoinBtnActive;
     float timeCount;
     float maxSpeed;
 
@@ -167,20 +150,15 @@ public class UIManager : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("firstTime", 0) == 0)
         {
-            ShowTutorial();
             PlayerPrefs.SetInt("firstTime", 1);
         }
-        else
-        {
-            HideTutorial();
-        }
+
         settingsUI.SetActive(false);      
         header.SetActive(true);
         title.SetActive(true);
         playBtn.SetActive(true);
         restartBtn.SetActive(false);
         menuButtons.SetActive(true);
-        shareUI.SetActive(false);
         velocityBoard.SetActive(false);
 
 
@@ -193,7 +171,6 @@ public class UIManager : MonoBehaviour
         score.gameObject.SetActive(true);
         playBtn.SetActive(false);
         menuButtons.SetActive(false);
-        shareUI.SetActive(false);
         velocityNote.SetActive(false);
         velocityBoard.SetActive(true);
     }
@@ -212,23 +189,13 @@ public class UIManager : MonoBehaviour
         velocityNote.SetActive(true);
     }
 
-    public void ShowTutorial()
-    {
-        tutorial.SetActive(true);
-        swipeLR.SetActive(true);
-        swipeUp.SetActive(false);
-    }
-
     public void ShowSwipeup()
     {
         swipeLR.SetActive(false);
         swipeUp.SetActive(true);
     }
 
-    public void HideTutorial()
-    {
-        tutorial.SetActive(false);
-    }
+
 
     public void ShowSettingsUI()
     {
