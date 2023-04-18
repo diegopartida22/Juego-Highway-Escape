@@ -52,7 +52,6 @@ public class UIManager : MonoBehaviour
 
     [Header("Sharing-Specific")]
     public GameObject shareUI;
-    public ShareUIController shareUIController;
 
     Animator scoreAnimator;
     Animator dailyRewardAnimator;
@@ -205,15 +204,12 @@ public class UIManager : MonoBehaviour
         title.SetActive(false);
         score.gameObject.SetActive(true);
         newBestScore.SetActive(ScoreManager.Instance.HasNewHighScore);
-
         playBtn.SetActive(false);
         restartBtn.SetActive(true);
         menuButtons.SetActive(true);
         settingsUI.SetActive(false);
         velocityText.text = ((int)maxSpeed).ToString();
         velocityNote.SetActive(true);
-
-
     }
 
     public void ShowTutorial()
@@ -255,7 +251,6 @@ public class UIManager : MonoBehaviour
     {
         mainCanvas.SetActive(true);
         characterSelectionUI.SetActive(false);
-    
         SoundManager.Instance.ToggleSound();
     }
 
