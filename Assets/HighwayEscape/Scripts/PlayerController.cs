@@ -11,7 +11,7 @@ public CameraController cameraController;
 public Shader curvedWorld;
 //    [HideInInspector]
 public float currentSpeed;
-public float maxAngularVelocity = 25;
+public float maxAngularVelocity = 15;
 [Header("Gameplay Config")]
 public float initialHealth = 5;
 

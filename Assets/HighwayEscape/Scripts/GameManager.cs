@@ -160,12 +160,6 @@ public class GameManager : MonoBehaviour {
         StartCoroutine(CheckAndDisableMovePath());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     // Listens to the event when player dies and call GameOver
     void PlayerController_PlayerDied()
     {
