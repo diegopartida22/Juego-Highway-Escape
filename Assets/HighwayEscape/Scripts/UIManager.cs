@@ -74,6 +74,11 @@ public class UIManager : MonoBehaviour
         score.text = ScoreManager.Instance.Score.ToString();
         bestScore.text = ScoreManager.Instance.HighScore.ToString();
         coinText.text = CoinManager.Instance.Coins.ToString();
+
+        if (Input.GetKeyDown(KeyCode.Space) && GameManager.Instance.GameState == GameState.GameOver)
+        {
+            RestartGame();
+        }
     }
 
     void GameManager_GameStateChanged(GameState newState, GameState oldState)
@@ -167,6 +172,4 @@ public class UIManager : MonoBehaviour
         swipeLR.SetActive(false);
         swipeUp.SetActive(true);
     }
-
-
 }
