@@ -109,6 +109,15 @@ void FixedUpdate()
                 }
 
             }
+
+            if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
+            {
+                currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
+                if (currentSpeed < 45)
+                {
+                    currentSpeed = 45;
+                }
+            }
         }
     }
 }

@@ -107,15 +107,6 @@ public class UIManager : MonoBehaviour
         playBtn.SetActive(false);
         menuButtons.SetActive(false);
         velocityBoard.SetActive(false);
-
-        // Enable or disable premium stuff
-
-
-
-        // Hidden by default
-
-        // These premium feature buttons are hidden by default
-        // and shown when certain criteria are met (e.g. rewarded ad is loaded)
     }
 
     public void StartGame()
