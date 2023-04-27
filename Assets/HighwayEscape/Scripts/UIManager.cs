@@ -17,6 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject characterSelectionUI;
     public GameObject header;
     public GameObject title;
+    public GameObject tutorial;
     public Text score;
     public Text bestScore;
     public Text coinText;
@@ -24,8 +25,6 @@ public class UIManager : MonoBehaviour
     public GameObject playBtn;
     public GameObject restartBtn;
     public GameObject menuButtons;
-    public GameObject swipeLR;
-    public GameObject swipeUp;
     public GameObject velocityBoard;
     public Text velocityText;
     public GameObject velocityNote;
@@ -107,6 +106,7 @@ public class UIManager : MonoBehaviour
         mainCanvas.SetActive(true);
         header.SetActive(false);
         title.SetActive(false);
+        tutorial.SetActive(false);
         score.gameObject.SetActive(false);
         newBestScore.SetActive(false);
         playBtn.SetActive(false);
@@ -137,6 +137,7 @@ public class UIManager : MonoBehaviour
         }
         header.SetActive(true);
         title.SetActive(true);
+        tutorial.SetActive(true);
         playBtn.SetActive(true);
         restartBtn.SetActive(false);
         menuButtons.SetActive(true);
@@ -147,6 +148,7 @@ public class UIManager : MonoBehaviour
     {
         header.SetActive(true);
         title.SetActive(false);
+        tutorial.SetActive(false);
         score.gameObject.SetActive(true);
         playBtn.SetActive(false);
         menuButtons.SetActive(false);
@@ -158,6 +160,7 @@ public class UIManager : MonoBehaviour
     {
         header.SetActive(true);
         title.SetActive(false);
+        tutorial.SetActive(false);
         score.gameObject.SetActive(true);
         newBestScore.SetActive(ScoreManager.Instance.HasNewHighScore);
         playBtn.SetActive(false);
@@ -165,11 +168,5 @@ public class UIManager : MonoBehaviour
         menuButtons.SetActive(true);
         velocityText.text = ((int)maxSpeed).ToString();
         velocityNote.SetActive(true);
-    }
-
-    public void ShowSwipeup()
-    {
-        swipeLR.SetActive(false);
-        swipeUp.SetActive(true);
     }
 }
