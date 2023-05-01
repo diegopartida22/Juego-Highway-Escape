@@ -2,29 +2,23 @@ using UnityEngine;
 
 public class PoliceController : MonoBehaviour
 {
-    public GameObject player;   // Referencia al objeto del carro
-    
-    // Velocidad del policía
+    public GameObject player;  // Referencia al GameObject del jugador
+    public float speed = 5f;   // Velocidad del policía
 
-    private Rigidbody rigid;
-
+    private Vector3 targetPos; // Posición objetivo del policía
 
     void Start()
     {
-        rigid = GetComponent<Rigidbody>();
+        // La posición inicial del policía será detrás del jugador
+        targetPos = player.transform.position - player.transform.forward * 5f;
     }
 
-    void FixedUpdate()
+    void Update()
     {
-        // Obtener la dirección hacia el carro
-        Vector3 direction = player.transform.position - transform.position;
-        direction.y = 0;
+        // Mover el policía hacia la posición objetivo del jugador
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        float currentSpeed = player.GetComponent<PlayerController>().currentSpeed;
-        rigid.velocity = direction.normalized * currentSpeed * 0.9f;
-
-        // Mover al policía hacia la posición del carro a una velocidad gradual despues de un tiempo
-
-        
+        // Actualizar la posición objetivo del policía para que siempre esté detrás del jugador
+        targetPos = player.transform.position - player.transform.forward * 5f;
     }
 }

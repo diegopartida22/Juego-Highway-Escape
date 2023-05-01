@@ -56,9 +56,10 @@ void Start()
     GetComponent<Renderer>().material.shader = curvedWorld;
 
     finishTurn = true;
-    currentSpeed = GameManager.Instance.initialSpeed;
+    //currentSpeed = GameManager.Instance.initialSpeed;
+    currentSpeed = 20;
     rigid = GetComponent<Rigidbody>();
-    StartCoroutine(IncreaseCurrentSpeed());
+
 
     rigid.maxAngularVelocity = maxAngularVelocity;
     rigid.ResetCenterOfMass();
@@ -99,7 +100,12 @@ void FixedUpdate()
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 currentSpeed += GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
+                if (currentSpeed > 95)
+                {
+                    currentSpeed = 95;
+                }
             }
+
             
             if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
             {
@@ -107,15 +113,14 @@ void FixedUpdate()
                 {
                     currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime / 10;
                 }
-
             }
 
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
-                if (currentSpeed < 45)
+                if (currentSpeed < 20)
                 {
-                    currentSpeed = 45;
+                    currentSpeed = 20;
                 }
             }
         }
@@ -205,17 +210,6 @@ void FixedUpdate()
 
         }
         finishTurn = true;
-    }
-
-    IEnumerator IncreaseCurrentSpeed()
-    {
-        while (currentSpeed < GameManager.Instance.playerSpeed && GameManager.Instance.GameState.Equals(GameState.Playing))
-        {
-            currentSpeed += GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
-            yield return new WaitForSeconds(0.5f);
-        }
-
-        currentSpeed = GameManager.Instance.playerSpeed;
     }
 
     void OnCollisionEnter(Collision col)

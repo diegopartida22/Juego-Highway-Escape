@@ -5,10 +5,6 @@ using System.Collections;
 using System;
 using SgLib;
 
-#if EASY_MOBILE
-using EasyMobile;
-#endif
-
 public class UIManager : MonoBehaviour
 {
     [Header("Object References")]
@@ -85,10 +81,6 @@ public class UIManager : MonoBehaviour
         if (newState == GameState.Playing)
         {
             ShowGameUI();
-        }
-        else if (newState == GameState.PreGameOver)
-        {
-            // Before game over, i.e. game potentially will be recovered
         }
         else if (newState == GameState.GameOver)
         {

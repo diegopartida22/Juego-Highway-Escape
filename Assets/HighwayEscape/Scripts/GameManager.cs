@@ -71,7 +71,7 @@ public class GameManager : MonoBehaviour {
     [Range(0f, 1f)]
     public float goldFrequency;
 
-    public float initialSpeed = 40;
+    public float initialSpeed = 10;
     public float playerSpeed = 60;
     public float increaseSpeedFactor = 150;
     public float turnTime = 0.3f;
