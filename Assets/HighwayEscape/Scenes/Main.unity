@@ -569,6 +569,7 @@ MonoBehaviour:
   title: {fileID: 1257205418}
   tutorial: {fileID: 170190107}
   healthFull: {fileID: 1119428777}
+  healthEmpty: {fileID: 1409859132}
   score: {fileID: 1311121417}
   bestScore: {fileID: 368489831}
   coinText: {fileID: 610080124}

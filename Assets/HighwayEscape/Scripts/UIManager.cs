@@ -15,6 +15,7 @@ public class UIManager : MonoBehaviour
     public GameObject title;
     public GameObject tutorial;
     public GameObject healthFull;
+    public GameObject healthEmpty;
     public Text score;
     public Text bestScore;
     public Text coinText;
@@ -131,7 +132,8 @@ public class UIManager : MonoBehaviour
         title.SetActive(true);
         tutorial.SetActive(true);
         playBtn.SetActive(true);
-        healthFull.SetActive(true);
+        healthFull.SetActive(false);
+        healthEmpty.SetActive(false);
         restartBtn.SetActive(false);
         menuButtons.SetActive(true);
         velocityBoard.SetActive(false);
