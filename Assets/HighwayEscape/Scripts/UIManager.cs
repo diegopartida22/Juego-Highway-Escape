@@ -14,6 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject header;
     public GameObject title;
     public GameObject tutorial;
+    public GameObject healthIcon;
     public Text score;
     public Text bestScore;
     public Text coinText;
@@ -65,7 +66,6 @@ public class UIManager : MonoBehaviour
                 timeCount = 0;
             }
         }
-
         score.text = ScoreManager.Instance.Score.ToString();
         bestScore.text = ScoreManager.Instance.HighScore.ToString();
         coinText.text = CoinManager.Instance.Coins.ToString();
@@ -141,6 +141,7 @@ public class UIManager : MonoBehaviour
         header.SetActive(true);
         title.SetActive(false);
         tutorial.SetActive(false);
+        healthIcon.SetActive(true);
         score.gameObject.SetActive(true);
         playBtn.SetActive(false);
         menuButtons.SetActive(false);

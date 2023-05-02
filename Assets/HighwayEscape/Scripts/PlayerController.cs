@@ -13,8 +13,8 @@ public Shader curvedWorld;
 public float currentSpeed;
 public float maxAngularVelocity = 15;
 [Header("Gameplay Config")]
-public float initialHealth = 5;
-
+public float initialHealth = 1;
+public float currentHealth;
 private Rigidbody rigid;
 private bool finishTurn;
 
@@ -46,8 +46,7 @@ public void Die()
 
 void Start()
 {
-
-    //Change the character to the selected one
+    currentHealth = initialHealth;
     GameObject currentCharacter = CharacterManager.Instance.characters[CharacterManager.Instance.CurrentCharacterIndex];
     Mesh charMesh = currentCharacter.GetComponent<MeshFilter>().sharedMesh;
     Material charMaterial = currentCharacter.GetComponent<Renderer>().sharedMaterial;
@@ -214,11 +213,16 @@ void FixedUpdate()
 
     void OnCollisionEnter(Collision col)
     {
+    
+
         if (GameManager.Instance.GameState.Equals(GameState.Playing))
         {
             if (col.gameObject.CompareTag("Car")) //Hit another car
             {
-                initialHealth -= col.impulse.magnitude; //Turn down health
+                print ("Health: " + initialHealth);
+                //initialHealth -= col.impulse.magnitude; //Turn down health
+                initialHealth/=2;
+                print ("Health: " + initialHealth);
                 CarController carController = col.gameObject.GetComponent<CarController>();
                 Vector3 dirCollision = (col.transform.position - transform.position).normalized;
                 carController.stopMoving = true;
@@ -227,7 +231,10 @@ void FixedUpdate()
                 Rigidbody carRigid = col.gameObject.GetComponent<Rigidbody>();
                 carRigid.constraints = RigidbodyConstraints.None;
 
-                if (initialHealth <= 0 || currentSpeed >= GameManager.Instance.playerSpeed) //Game over
+                // El carro se vuelve inmune a las colisiones por un tiempo
+                StartCoroutine(ImmuneToCollision(carRigid, 1f));
+
+                if (initialHealth < 2.5) //Game over
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
                     Die();
@@ -246,6 +253,7 @@ void FixedUpdate()
                 rigid.AddForce(new Vector3(40 * dir, 0, (200 - currentSpeed)*2), ForceMode.Impulse);
             }
         }
+
     }
 
     void OnTriggerEnter(Collider other)
@@ -275,4 +283,13 @@ void FixedUpdate()
 
         rigid.angularVelocity = angularV * maxAngularVelocity;
     }
+
+    IEnumerator ImmuneToCollision(Rigidbody rigid, float time)
+    {
+        rigid.detectCollisions = false;
+        yield return new WaitForSeconds(time);
+        rigid.detectCollisions = true;
+    }
 }
+
+
