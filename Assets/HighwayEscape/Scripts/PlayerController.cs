@@ -9,7 +9,6 @@ public static event System.Action PlayerDied;
 [Header("Gameplay References")]
 public CameraController cameraController;
 public Shader curvedWorld;
-//    [HideInInspector]
 public GameObject healthEmpty;
 
 public GameObject healthFull;
@@ -38,14 +37,6 @@ void OnDisable()
     GameManager.GameStateChanged -= OnGameStateChanged;
 }
 
-void OnGameStateChanged(GameState newState, GameState oldState)
-{
-    if (newState == GameState.Playing)
-    {
-        // Do whatever necessary when a new game starts
-    }
-}
-
 // Calls this when the player dies and game over
 public void Die()
 {
@@ -65,7 +56,6 @@ void Start()
     GetComponent<Renderer>().material.shader = curvedWorld;
 
     finishTurn = true;
-    //currentSpeed = GameManager.Instance.initialSpeed;
     currentSpeed = 20;
     rigid = GetComponent<Rigidbody>();
 
@@ -90,7 +80,7 @@ void FixedUpdate()
     {
         if (finishTurn)
         {
-            // Movimiento hacia la derecha
+            // Movement to the right
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 StartCoroutine(TurnRight());
@@ -98,7 +88,7 @@ void FixedUpdate()
                 cameraController.MoveRight();
             }
 
-            // Movimiento hacia la izquierda
+            // Movement to the left
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(TurnLeft());
@@ -106,6 +96,7 @@ void FixedUpdate()
                 cameraController.MoveLeft();
             }
 
+            // Increase speed
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 currentSpeed += GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
@@ -115,7 +106,6 @@ void FixedUpdate()
                 }
             }
 
-            
             if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
             {
                 if (currentSpeed > GameManager.Instance.playerSpeed)
@@ -124,6 +114,7 @@ void FixedUpdate()
                 }
             }
 
+            // Decrease speed
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
@@ -229,7 +220,7 @@ void FixedUpdate()
         {
             if (col.gameObject.CompareTag("Car")) //Hit another car
             {
-                print ("Health: " + initialHealth);
+                //print ("Health: " + initialHealth);
                 initialHealth/=2;
 
                 if (initialHealth == 2.5)
@@ -248,12 +239,9 @@ void FixedUpdate()
                 {
                     healthEmpty2.SetActive(true);
                     healthFull2.SetActive(false);
-                }
-                                
-                print ("Health: " + initialHealth);
-                // play sound named hitObstacle
+                }     
+                //print ("Health: " + initialHealth);
                 SoundManager.Instance.PlaySound(SoundManager.Instance.hitObstacle);
-                
 
                 CarController carController = col.gameObject.GetComponent<CarController>();
                 Vector3 dirCollision = (col.transform.position - transform.position).normalized;

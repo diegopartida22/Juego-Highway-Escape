@@ -44,21 +44,17 @@ void FixedUpdate()
     {
         if (finishTurn)
         {
-            // Movimiento hacia la derecha
             if (Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.D))
             {
                 StartCoroutine(TurnRight());
                 StartCoroutine(Rotate(GameManager.Instance.rotateAngle));
    
             }
-
-            // Movimiento hacia la izquierda
             if (Input.GetKeyDown(KeyCode.LeftArrow) || Input.GetKeyDown(KeyCode.A))
             {
                 StartCoroutine(TurnLeft());
                 StartCoroutine(Rotate(-GameManager.Instance.rotateAngle));;
             }
-
             if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.W))
             {
                 currentSpeed += GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
@@ -67,8 +63,6 @@ void FixedUpdate()
                     currentSpeed = 95;
                 }
             }
-
-            
             if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.W))
             {
                 if (currentSpeed > GameManager.Instance.playerSpeed)
@@ -76,7 +70,6 @@ void FixedUpdate()
                     currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime / 10;
                 }
             }
-
             if (Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.S))
             {
                 currentSpeed -= GameManager.Instance.increaseSpeedFactor * Time.deltaTime;
