@@ -13,6 +13,12 @@ public Shader curvedWorld;
 public GameObject healthEmpty;
 
 public GameObject healthFull;
+public GameObject healthEmpty1;
+
+public GameObject healthFull1;
+public GameObject healthEmpty2;
+
+public GameObject healthFull2;
 public float currentSpeed;
 public float maxAngularVelocity = 15;
 [Header("Gameplay Config")]
@@ -224,11 +230,26 @@ void FixedUpdate()
             if (col.gameObject.CompareTag("Car")) //Hit another car
             {
                 print ("Health: " + initialHealth);
-            
-                healthEmpty.SetActive(true);
-                healthFull.SetActive(false);
-                                
                 initialHealth/=2;
+
+                if (initialHealth == 2.5)
+                {
+                    healthEmpty.SetActive(true);
+                    healthFull.SetActive(false);
+                }
+
+                if (initialHealth == 1.25)
+                {
+                    healthEmpty1.SetActive(true);
+                    healthFull1.SetActive(false);
+                }
+
+                if (initialHealth == 0.625)
+                {
+                    healthEmpty2.SetActive(true);
+                    healthFull2.SetActive(false);
+                }
+                                
                 print ("Health: " + initialHealth);
                 // play sound named hitObstacle
                 SoundManager.Instance.PlaySound(SoundManager.Instance.hitObstacle);
@@ -244,7 +265,7 @@ void FixedUpdate()
 
                 StartCoroutine(ImmuneToCollision(carRigid, 1f));
 
-                if (initialHealth < 2.5) //Game over
+                if (initialHealth == 0.625) //Game over
                 {
                     SoundManager.Instance.PlaySound(SoundManager.Instance.gameOver);
                     Die();
