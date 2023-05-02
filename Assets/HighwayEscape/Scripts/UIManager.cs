@@ -170,9 +170,9 @@ public class UIManager : MonoBehaviour
         score.gameObject.SetActive(true);
         newBestScore.SetActive(ScoreManager.Instance.HasNewHighScore);
         playBtn.SetActive(false);
-        healthFull.SetActive(true);
-        healthFull1.SetActive(true);
-        healthFull2.SetActive(true);
+        healthFull.SetActive(false);
+        healthFull1.SetActive(false);
+        healthFull2.SetActive(false);
         restartBtn.SetActive(true);
         menuButtons.SetActive(true);
         velocityText.text = ((int)maxSpeed).ToString();
