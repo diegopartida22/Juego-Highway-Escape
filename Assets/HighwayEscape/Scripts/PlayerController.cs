@@ -27,16 +27,6 @@ public float currentHealth;
 private Rigidbody rigid;
 private bool finishTurn;
 
-void OnEnable()
-{
-    GameManager.GameStateChanged += OnGameStateChanged;
-}
-
-void OnDisable()
-{
-    GameManager.GameStateChanged -= OnGameStateChanged;
-}
-
 // Calls this when the player dies and game over
 public void Die()
 {

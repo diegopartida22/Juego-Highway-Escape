@@ -15,15 +15,9 @@ private bool finishTurn;
 
 void Start()
 {
-
-
-
     finishTurn = true;
-    //currentSpeed = GameManager.Instance.initialSpeed;
     currentSpeed = 20;
     rigid = GetComponent<Rigidbody>();
-
-
     rigid.maxAngularVelocity = maxAngularVelocity;
     rigid.ResetCenterOfMass();
 }
