@@ -1759,10 +1759,10 @@ RectTransform:
   m_Father: {fileID: 170190108}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1256, y: -174.16}
-  m_SizeDelta: {x: 165.5952, y: 165.5952}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -727, y: -174.16}
+  m_SizeDelta: {x: 165.59521, y: 165.59521}
   m_Pivot: {x: 1, y: 0.5}
 --- !u!114 &968078071
 MonoBehaviour:
@@ -4260,5 +4260,9 @@ PrefabInstance:
       propertyPath: background.clip
       value: 
       objectReference: {fileID: 8300000, guid: 9c5a51a6f177a8645be99921de4c3555, type: 3}
+    - target: {fileID: 114213957441753068, guid: 4beb280864c45304bb52f8fce9cb01d9, type: 3}
+      propertyPath: hitObstacle.clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 29fb94e9fd586c54ab05a13ee723db16, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4beb280864c45304bb52f8fce9cb01d9, type: 3}

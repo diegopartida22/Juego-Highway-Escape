@@ -230,6 +230,10 @@ void FixedUpdate()
                                 
                 initialHealth/=2;
                 print ("Health: " + initialHealth);
+                // play sound named hitObstacle
+                SoundManager.Instance.PlaySound(SoundManager.Instance.hitObstacle);
+                
+
                 CarController carController = col.gameObject.GetComponent<CarController>();
                 Vector3 dirCollision = (col.transform.position - transform.position).normalized;
                 carController.stopMoving = true;
