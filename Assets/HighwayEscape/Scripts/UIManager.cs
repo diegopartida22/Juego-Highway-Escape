@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     public GameObject header;
     public GameObject title;
     public GameObject tutorial;
-    public GameObject healthIcon;
+    public GameObject healthFull;
     public Text score;
     public Text bestScore;
     public Text coinText;
@@ -131,6 +131,7 @@ public class UIManager : MonoBehaviour
         title.SetActive(true);
         tutorial.SetActive(true);
         playBtn.SetActive(true);
+        healthFull.SetActive(true);
         restartBtn.SetActive(false);
         menuButtons.SetActive(true);
         velocityBoard.SetActive(false);
@@ -141,7 +142,7 @@ public class UIManager : MonoBehaviour
         header.SetActive(true);
         title.SetActive(false);
         tutorial.SetActive(false);
-        healthIcon.SetActive(true);
+        healthFull.SetActive(true);
         score.gameObject.SetActive(true);
         playBtn.SetActive(false);
         menuButtons.SetActive(false);
@@ -157,6 +158,7 @@ public class UIManager : MonoBehaviour
         score.gameObject.SetActive(true);
         newBestScore.SetActive(ScoreManager.Instance.HasNewHighScore);
         playBtn.SetActive(false);
+        healthFull.SetActive(true);
         restartBtn.SetActive(true);
         menuButtons.SetActive(true);
         velocityText.text = ((int)maxSpeed).ToString();

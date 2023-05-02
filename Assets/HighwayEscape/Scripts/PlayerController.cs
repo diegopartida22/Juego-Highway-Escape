@@ -10,11 +10,13 @@ public static event System.Action PlayerDied;
 public CameraController cameraController;
 public Shader curvedWorld;
 //    [HideInInspector]
+public GameObject healthEmpty;
 public float currentSpeed;
 public float maxAngularVelocity = 15;
 [Header("Gameplay Config")]
 public float initialHealth = 1;
 public float currentHealth;
+
 private Rigidbody rigid;
 private bool finishTurn;
 
@@ -220,6 +222,9 @@ void FixedUpdate()
             if (col.gameObject.CompareTag("Car")) //Hit another car
             {
                 print ("Health: " + initialHealth);
+            
+                // change z index of health empty object
+                                
                 //initialHealth -= col.impulse.magnitude; //Turn down health
                 initialHealth/=2;
                 print ("Health: " + initialHealth);
