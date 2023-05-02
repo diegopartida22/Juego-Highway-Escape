@@ -11,6 +11,8 @@ public CameraController cameraController;
 public Shader curvedWorld;
 //    [HideInInspector]
 public GameObject healthEmpty;
+
+public GameObject healthFull;
 public float currentSpeed;
 public float maxAngularVelocity = 15;
 [Header("Gameplay Config")]
@@ -223,9 +225,9 @@ void FixedUpdate()
             {
                 print ("Health: " + initialHealth);
             
-                // change z index of health empty object
+                healthEmpty.SetActive(true);
+                healthFull.SetActive(false);
                                 
-                //initialHealth -= col.impulse.magnitude; //Turn down health
                 initialHealth/=2;
                 print ("Health: " + initialHealth);
                 CarController carController = col.gameObject.GetComponent<CarController>();
@@ -236,7 +238,6 @@ void FixedUpdate()
                 Rigidbody carRigid = col.gameObject.GetComponent<Rigidbody>();
                 carRigid.constraints = RigidbodyConstraints.None;
 
-                // El carro se vuelve inmune a las colisiones por un tiempo
                 StartCoroutine(ImmuneToCollision(carRigid, 1f));
 
                 if (initialHealth < 2.5) //Game over
